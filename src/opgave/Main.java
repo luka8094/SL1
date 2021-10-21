@@ -258,7 +258,8 @@ public class Main {
         */
 
        //Relativt 'hardcoded' one-liner løsning på at oprette en gruppe bestående af 4 unikke class origins (A,B,C,D),
-        //MEN opfanger KUN det første elemet fra hver gruppering
+       //MEN opfanger KUN det første elemet fra hver gruppering
+       //Inspirationskilde: https://stackoverflow.com/questions/23699371/java-8-distinct-by-property
        //innerGroup.stream().collect(Collectors.groupingBy(Student::getClassOrigin)).values().forEach( s -> System.out.println( s.get(0).toString()));
 
        //TODO: randomize hvilke studerende der blive valgt per omgang:
@@ -272,6 +273,8 @@ public class Main {
         innerGroup.stream().collect(Collectors.groupingBy(Student::getClassOrigin)).values().forEach( s -> {
             System.out.println( s.get(randomInt).toString() != null ? s.get(randomInt).toString() : null);
         });
+
+        //innerGroup.stream().collect(Collectors.groupingBy(Student::getClassOrigin)).values().stream().findAny().
     }
 
 }
